@@ -1,0 +1,5 @@
+# face detection
+https://www.richardnichols.net/2011/01/java-facial-recognition-haar-cascade-with-jjil-guide/
+
+# print job 
+https://docs.oracle.com/javase/tutorial/2d/printing/printable.html
