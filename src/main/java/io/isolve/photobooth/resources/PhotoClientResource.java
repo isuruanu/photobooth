@@ -1,7 +1,6 @@
 package io.isolve.photobooth.resources;
 
-import io.isolve.photobooth.api.PendingImage;
-import io.isolve.photobooth.api.PendingImages;
+import io.isolve.photobooth.api.*;
 import io.isolve.photobooth.util.IdUtil;
 import org.apache.commons.codec.binary.Base64InputStream;
 import org.eclipse.jetty.http.HttpStatus;
@@ -19,6 +18,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.*;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -87,5 +87,32 @@ public class PhotoClientResource {
         File file = Paths.get(location, image).toFile();
         String contentType = new MimetypesFileTypeMap().getContentType(file);
         return Response.ok(file, contentType).build();
+    }
+
+    @GET
+    @Path("/client/print/status")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PrintJobStatus currentStatus() {
+        PrintJobStatus printJobStatus = new PrintJobStatus();
+        printJobStatus.setCompleted(63);
+        printJobStatus.setAllSubmitted(67);
+        printJobStatus.setError(4);
+        return printJobStatus;
+    }
+
+    @GET
+    @Path("/client/print/status/history")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PrintJobHistory statusHistory() {
+        PrintJobHistory printJobHistory = new PrintJobHistory();
+        printJobHistory.setPrintJobHistoryEntries(Arrays.asList(
+                new PrintJobHistoryEntry(new PrintJobStatus(10, 10, 0), "12:10"),
+                new PrintJobHistoryEntry(new PrintJobStatus(12, 14, 1), "12:20"),
+                new PrintJobHistoryEntry(new PrintJobStatus(13, 14, 2), "12:30"),
+                new PrintJobHistoryEntry(new PrintJobStatus(15, 15, 0), "12:40"),
+                new PrintJobHistoryEntry(new PrintJobStatus(12, 14, 1), "12:50"),
+                new PrintJobHistoryEntry(new PrintJobStatus(14, 14, 1), "13:00")
+        ));
+        return printJobHistory;
     }
 }
