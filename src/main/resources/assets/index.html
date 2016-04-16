@@ -24,7 +24,8 @@
 
   <link rel="icon" sizes="192x192" href="images/webrtc-icon-192x192.png">
   <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
 
 </head>
 
@@ -34,11 +35,14 @@
 
     <h1><a href="//webrtc.github.io/samples/" title="WebRTC in action">WebRTC in action</a> <span>Allow your browser to access you camera.</span></h1>
 
-    <video autoplay></video>
-    <button id="snapshot">Take snapshot</button>
-    <canvas></canvas>
-    <button id="print">Print</button>
-
+    <div class="row">
+      <video autoplay></video>
+      <button id="snapshot" class="btn btn-success btn-block">Take snapshot <span class="glyphicon glyphicon-phone"/><span class="badge">5</span></button>
+    </div>
+    <div class="row">
+      <canvas></canvas>
+      <button id="print" class="btn btn-success btn-block">Print <span class="glyphicon glyphicon-print"></span></button>
+    </div>
   </div>
 
   <script src="js/adapter.js"></script>

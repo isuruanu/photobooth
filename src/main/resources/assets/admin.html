@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/pending_jobs_page.css">
+    <link rel="stylesheet" href="css/admin.css"/>
 
 </head>
 
@@ -60,10 +61,69 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Pending Photos</h1>
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Private</a></li>
+            <li><a href="#">Pictures</a></li>
+            <li class="active">Vacation</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 jumbotron">
+            <h1>Pending Photos <small>All pending photos are listed here.</small> </h1>
+            <p class="text-success bg-success">Photos scheduled for printing at future date.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Color Code</th>
+                        <th>Count</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="bg-danger">
+                        <td>Red</td>
+                        <td>3</td>
+                        <td>Error occurred</td>
+                    </tr>
+                    <tr class="bg-success">
+                        <td>Green</td>
+                        <td>4</td>
+                        <td>Success</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                70%
+            </div>
         </div>
         <div id="galary"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="pagination center-block">
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="pager">
+            <li><a href="/">New Photo</a></li>
+            <li><a href="/take/statistics.html">Statistics</a></li>
+        </ul>
     </div>
 </div>
 

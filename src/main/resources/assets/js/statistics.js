@@ -29,7 +29,7 @@ function prepend(value, array) {
 }
 
 var loadData = function() {
-    $.getJSON( "http://127.0.0.1:7891/client/print/status/history", function(data) {
+    $.getJSON( "http://192.168.0.101:7891/client/print/status/history", function(data) {
         var printJobEntries = data["printJobHistoryEntries"];
         if(printJobEntries.length != 0) {
                var completed = prepend('Completed', printJobEntries.map(function(x){
